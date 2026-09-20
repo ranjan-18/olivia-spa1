@@ -78,54 +78,56 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} ${playfair.variable} h-full antialiased`}
     >
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "HealthAndBeautyBusiness",
+              "name": "Olivia Spa & Physiotherapy",
+              "image": "https://oliviaspa.in/logo.png",
+              "@id": "https://oliviaspa.in",
+              "url": "https://oliviaspa.in",
+              "telephone": ["+918409122919", "+919263516115", "+919241651890"],
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Memco More, Bhiphore Hirak Rd, Chanchani Colony",
+                "addressLocality": "Dhanbad",
+                "addressRegion": "Jharkhand",
+                "postalCode": "826010",
+                "addressCountry": "IN"
+              },
+              "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 23.820846,
+                "longitude": 86.430489
+              },
+              "openingHoursSpecification": {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": [
+                  "Monday",
+                  "Tuesday",
+                  "Wednesday",
+                  "Thursday",
+                  "Friday",
+                  "Saturday",
+                  "Sunday"
+                ],
+                "opens": "09:00",
+                "closes": "21:00"
+              },
+              "priceRange": "$$"
+            })
+          }}
+        />
+      </head>
       <body className="min-h-full flex flex-col overflow-x-hidden">
         <Navbar />
         {children}
         <Footer />
         <FloatingContact />
       </body>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "HealthAndBeautyBusiness",
-            "name": "Olivia Spa & Physiotherapy",
-            "image": "https://oliviaspa.in/logo.png",
-            "@id": "https://oliviaspa.in",
-            "url": "https://oliviaspa.in",
-            "telephone": "+918409122919",
-            "address": {
-              "@type": "PostalAddress",
-              "streetAddress": "Memco More, Bhiphore Hirak Rd, Chanchani Colony",
-              "addressLocality": "Dhanbad",
-              "addressRegion": "Jharkhand",
-              "postalCode": "826010",
-              "addressCountry": "IN"
-            },
-            "geo": {
-              "@type": "GeoCoordinates",
-              "latitude": 23.820846,
-              "longitude": 86.430489
-            },
-            "openingHoursSpecification": {
-              "@type": "OpeningHoursSpecification",
-              "dayOfWeek": [
-                "Monday",
-                "Tuesday",
-                "Wednesday",
-                "Thursday",
-                "Friday",
-                "Saturday",
-                "Sunday"
-              ],
-              "opens": "09:00",
-              "closes": "21:00"
-            },
-            "priceRange": "$$"
-          })
-        }}
-      />
     </html>
   );
 }

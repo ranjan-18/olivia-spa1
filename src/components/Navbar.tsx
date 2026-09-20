@@ -12,6 +12,8 @@ export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
+  const [showTopBar, setShowTopBar] = useState(true);
+
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
@@ -35,9 +37,43 @@ export function Navbar() {
   
   return (
     <>
-      <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${navBackground}`}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-20 relative">
+      <nav className={`fixed top-0 w-full z-50 transition-all duration-300 flex flex-col`}>
+        {/* Top Notification Bar */}
+        {showTopBar && (
+          <div className="w-full bg-[var(--color-primary)] text-white text-xs md:text-sm py-2 px-4 sm:px-6 lg:px-8 border-b border-white/10 relative">
+            <div className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-center sm:justify-between items-center gap-2 sm:gap-0 pr-6">
+              <div className="flex items-center gap-2 font-medium tracking-wide">
+                <span className="flex text-yellow-300">
+                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                </span>
+                <span>4.5 Google Rating</span>
+              </div>
+              <div className="flex flex-wrap justify-center items-center gap-3 font-medium tracking-wide opacity-90 text-[11px] sm:text-xs md:text-sm">
+                <a href="tel:+918409122919" className="hover:text-yellow-300 transition-colors">8409122919</a>
+                <span className="hidden sm:inline">|</span>
+                <a href="tel:+919263516115" className="hover:text-yellow-300 transition-colors">9263516115</a>
+                <span className="hidden sm:inline">|</span>
+                <a href="tel:+919241651890" className="hover:text-yellow-300 transition-colors">9241651890</a>
+              </div>
+            </div>
+            <button 
+              onClick={() => setShowTopBar(false)}
+              className="absolute right-4 top-1/2 -translate-y-1/2 text-white/80 hover:text-white transition-colors"
+              aria-label="Close notification"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
+              </svg>
+            </button>
+          </div>
+        )}
+
+        {/* Main Navbar */}
+        <div className={`w-full transition-all duration-300 ${navBackground}`}>
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex justify-between items-center h-20 relative">
             
             {/* Mobile Hamburger (Left side on mobile) */}
             <div className="flex items-center md:hidden order-1">
@@ -92,11 +128,12 @@ export function Navbar() {
             </div>
           </div>
         </div>
+        </div>
       </nav>
 
       {/* Mobile Menu Dropdown & Overlay (Controlled via React State) */}
       {isMobileMenuOpen && (
-        <div className="md:hidden fixed inset-0 z-40 flex flex-col pt-20">
+        <div className="md:hidden fixed inset-0 z-40 flex flex-col pt-28">
           {/* Overlay to catch outside clicks */}
           <div 
             className="absolute inset-0 bg-black/20 backdrop-blur-sm"

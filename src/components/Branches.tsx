@@ -12,7 +12,7 @@ export function Branches() {
       name: "Memco More Dhanbad",
       address: "Shop No 01, Memco More, Bhiphore Hirak Rd, Chanchani Colony, Dhanbad, Susnilewa, Jharkhand 826010",
       image: "/hero2.png",
-      mapLink: "https://share.google/bvYJ33CTq89uwnp6a"
+      mapLink: "https://maps.app.goo.gl/GMLJGWuWFtKcMf6h7"
     }
   ];
 
