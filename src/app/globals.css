@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --pattern-color: #bae6fd; /* light blue (sky-200) */
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-serif: var(--font-playfair);
+  --color-primary: rgb(16 185 129);
+}
+
+
+
+@keyframes slider {
+  0%, 20%   { transform: translateX(0%); }
+  25%, 45%  { transform: translateX(-20%); }
+  50%, 70%  { transform: translateX(-40%); }
+  75%, 95%  { transform: translateX(-60%); }
+  100%      { transform: translateX(-80%); }
+}
+
+.animate-slider {
+  animation: slider 20s infinite linear;
+}
+
+@keyframes journey-beam {
+  0% { top: -10%; opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { top: 100%; opacity: 0; }
+}
+
+.animate-journey {
+  animation: journey-beam 3s infinite linear;
+}
+
+@keyframes pulse-node {
+  0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.4); }
+  50% { transform: scale(1.15); box-shadow: 0 0 0 10px rgba(16, 185, 129, 0); }
+}
+
+.animate-pulse-node {
+  animation: pulse-node 2.5s infinite ease-in-out;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
