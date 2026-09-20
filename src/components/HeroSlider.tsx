@@ -50,9 +50,6 @@ export function HeroSlider() {
             >
               Book an Appointment
             </Button>
-            <Button variant="outline" className="text-sm md:text-base px-10 py-4 uppercase tracking-widest bg-transparent border-white text-white hover:bg-white hover:text-gray-900 border-[1px] shadow-xl backdrop-blur-sm">
-              View Services
-            </Button>
           </div>
         </div>
       </div>

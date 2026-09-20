@@ -18,9 +18,44 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Olivia Spa & Physiotherapy | Dhanbad, Jharkhand",
-  description: "Experience premium spa and physiotherapy services at Olivia Spa in Dhanbad, Jharkhand, India. Relax, rejuvenate, and recover with our expert therapists.",
-  keywords: ["Spa in Dhanbad", "Physiotherapy Dhanbad", "Olivia Spa", "Massage Therapy Dhanbad", "Wellness Center Jharkhand"],
+  title: {
+    default: "Olivia Spa & Physiotherapy | Best Spa in Dhanbad",
+    template: "%s | Olivia Spa Dhanbad",
+  },
+  description: "Experience premium spa and physiotherapy services at Olivia Spa in Dhanbad, Jharkhand, India. Relax, rejuvenate, and recover with our expert certified therapists.",
+  keywords: ["Best Spa in Dhanbad", "Physiotherapy Dhanbad", "Olivia Spa", "Massage Therapy Dhanbad", "Wellness Center Jharkhand", "Thai Massage", "Swedish Massage"],
+  authors: [{ name: "Olivia Spa" }],
+  creator: "Olivia Spa",
+  publisher: "Olivia Spa",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  openGraph: {
+    title: "Olivia Spa & Physiotherapy | Best Spa in Dhanbad",
+    description: "Premium spa, massage, and physiotherapy services in Dhanbad. Rejuvenate your mind and body.",
+    url: "https://oliviaspa.in",
+    siteName: "Olivia Spa Dhanbad",
+    locale: "en_IN",
+    type: "website",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Olivia Spa & Physiotherapy | Dhanbad",
+    description: "Premium spa and physiotherapy services in Dhanbad, Jharkhand.",
+  },
 };
 
 export const viewport: Viewport = {
@@ -49,6 +84,48 @@ export default function RootLayout({
         <Footer />
         <FloatingContact />
       </body>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "HealthAndBeautyBusiness",
+            "name": "Olivia Spa & Physiotherapy",
+            "image": "https://oliviaspa.in/logo.png",
+            "@id": "https://oliviaspa.in",
+            "url": "https://oliviaspa.in",
+            "telephone": "+918409122919",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Memco More, Bhiphore Hirak Rd, Chanchani Colony",
+              "addressLocality": "Dhanbad",
+              "addressRegion": "Jharkhand",
+              "postalCode": "826010",
+              "addressCountry": "IN"
+            },
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": 23.820846,
+              "longitude": 86.430489
+            },
+            "openingHoursSpecification": {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": [
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday",
+                "Saturday",
+                "Sunday"
+              ],
+              "opens": "09:00",
+              "closes": "21:00"
+            },
+            "priceRange": "$$"
+          })
+        }}
+      />
     </html>
   );
 }
