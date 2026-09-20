@@ -55,7 +55,7 @@ export function Footer() {
         <div className="pt-8 border-t border-gray-200 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0 text-gray-500 font-light tracking-wide">
           <p>Copyright © reserved Olivia Spa N Physiothreapy</p>
           <p>
-            Made with ❤️ by <a href="https://www.linkedin.com/in/ranjan-kumar-a3a27425a/" target="_blank" rel="noopener noreferrer" className="text-[var(--color-primary)] hover:text-gray-900 transition-colors font-medium">Ranjan</a>
+            Made with ❤️ by <a href="https://forallaxis.com" target="_blank" rel="noopener noreferrer" className="text-[var(--color-primary)] hover:text-gray-900 transition-colors font-medium">forallaxis</a>
           </p>
         </div>
       </div>
