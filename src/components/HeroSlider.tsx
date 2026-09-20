@@ -33,14 +33,14 @@ export function HeroSlider() {
 
       {/* Overlay with Content */}
       <div className="absolute inset-0 z-20 bg-gradient-to-r from-black/80 via-black/40 to-transparent flex flex-col items-start justify-center text-left px-8 sm:px-16 md:px-24 pointer-events-none">
-        <div className="max-w-3xl mt-20 pointer-events-auto">
+        <div className="max-w-3xl mt-40 md:mt-20 pointer-events-auto">
           <h1 className="font-serif text-5xl md:text-7xl font-light text-white mb-6 drop-shadow-xl tracking-wide leading-tight">
             Feel Better,<br/>Live Better
           </h1>
           <p className="text-lg md:text-2xl text-gray-100 mb-10 drop-shadow-lg font-light tracking-wide max-w-2xl">
             Relax, heal, and feel your best with our spa and physiotherapy services in Dhanbad.
           </p>
-          <div className="flex flex-col sm:flex-row gap-6">
+          <div className="hidden md:flex flex-col sm:flex-row gap-6">
             <Button 
               variant="primary" 
               className="text-sm md:text-base px-10 py-4 uppercase tracking-widest shadow-xl"
